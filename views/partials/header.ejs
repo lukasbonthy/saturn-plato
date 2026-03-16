@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/public/styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="logo" href="/">Saturn / Plato</a>
+      <nav class="nav">
+        <% if (user) { %>
+          <a href="/dashboard" class="nav-link <%= currentPath === '/dashboard' ? 'active' : '' %>">Dashboard</a>
+          <a href="/plato" class="nav-link <%= currentPath === '/plato' ? 'active' : '' %>">Plato</a>
+          <a href="/saturn" class="nav-link <%= currentPath === '/saturn' ? 'active' : '' %>">Saturn</a>
+          <form action="/logout" method="POST">
+            <button class="ghost-btn" type="submit">Logout</button>
+          </form>
+        <% } else { %>
+          <a href="/login" class="nav-link <%= currentPath === '/login' ? 'active' : '' %>">Login</a>
+          <a href="/signup" class="solid-btn">Sign up</a>
+        <% } %>
+      </nav>
+    </header>
