@@ -1,0 +1,43 @@
+<%- include('partials/header', { title: 'Sign up' }) %>
+<main class="centered">
+  <section class="auth-shell">
+    <article class="glass-card auth-side">
+      <span class="eyebrow">Create your account</span>
+      <h2>Launch your own Saturn / Plato space.</h2>
+      <p class="muted">
+        Sign up to unlock the dashboard, browse through the proxy, and keep the whole experience feeling cleaner, bigger, and more branded.
+      </p>
+
+      <div class="auth-bullets">
+        <div><span>⚡</span><strong>Fast auth flow with simple local user storage.</strong></div>
+        <div><span>🌌</span><strong>Richer gradients, depth, glow, and layered cards.</strong></div>
+        <div><span>🧭</span><strong>Two focused destinations once you’re in.</strong></div>
+      </div>
+    </article>
+
+    <section class="auth-card">
+      <h1>Create account</h1>
+      <p class="muted">Make a login so the dashboard stays protected.</p>
+      <% if (error) { %>
+        <div class="alert"><%= error %></div>
+      <% } %>
+      <form method="POST" action="/signup" class="stack-form">
+        <label>
+          <span>Username</span>
+          <input type="text" name="username" value="<%= values.username || '' %>" placeholder="Lukas" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" value="<%= values.email || '' %>" placeholder="you@example.com" required />
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" placeholder="At least 6 characters" required />
+        </label>
+        <button class="solid-btn wide" type="submit">Sign up</button>
+      </form>
+      <p class="muted small">Already have one? <a href="/login">Log in</a>.</p>
+    </section>
+  </section>
+</main>
+<%- include('partials/footer') %>

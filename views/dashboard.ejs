@@ -1,0 +1,68 @@
+<%- include('partials/header', { title: 'Dashboard' }) %>
+<main class="page-content">
+  <section class="dashboard-hero">
+    <article class="glass-card dashboard-lead">
+      <span class="eyebrow">Logged in</span>
+      <h1>Welcome back, <%= user.username %>.</h1>
+      <p class="muted">
+        Your dashboard only shows the two tools you wanted, with Saturn visually pushed as the main feature and Plato kept as the clean secondary page.
+      </p>
+
+      <div class="quick-pills">
+        <span>🪐 Proxy focused</span>
+        <span>🎬 Movies ready</span>
+        <span>🔐 Session protected</span>
+      </div>
+    </article>
+
+    <aside class="dashboard-side">
+      <article class="panel-card">
+        <h3>Workspace pulse</h3>
+        <div class="mini-kpi">
+          <div>
+            <strong>2 apps</strong>
+            <span class="muted">Plato + Saturn</span>
+          </div>
+          <div>
+            <strong>1 goal</strong>
+            <span class="muted">make Saturn shine</span>
+          </div>
+          <div>
+            <strong>Proxy</strong>
+            <span class="muted">rewrites common paths</span>
+          </div>
+          <div>
+            <strong>Design+</strong>
+            <span class="muted">more depth and polish</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel-card compact">
+        <h3>Start here</h3>
+        <p class="muted">Open Saturn first if you want the strongest part of the app. Plato is there as the second clean destination.</p>
+      </article>
+    </aside>
+  </section>
+
+  <section class="grid dashboard-grid">
+    <a class="tool-card" href="/plato">
+      <div class="tool-icon">🎬</div>
+      <div class="tool-copy">
+        <h2>Plato</h2>
+        <p class="muted">Styled movie cards, search, and a cleaner entertainment section.</p>
+      </div>
+      <div class="tool-arrow">→</div>
+    </a>
+
+    <a class="tool-card proxy-focus" href="/saturn">
+      <div class="tool-icon">🪐</div>
+      <div class="tool-copy">
+        <h2>Saturn</h2>
+        <p class="muted">Main focus: type a URL and browse it through your own Express proxy route with a stronger visual shell.</p>
+      </div>
+      <div class="tool-arrow">→</div>
+    </a>
+  </section>
+</main>
+<%- include('partials/footer') %>

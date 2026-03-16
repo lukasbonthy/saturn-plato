@@ -1,0 +1,92 @@
+<%- include('partials/header', { title: 'Saturn' }) %>
+<main class="page-content">
+  <section class="section-head">
+    <div>
+      <span class="eyebrow">Web proxy</span>
+      <h1>Saturn</h1>
+      <p class="muted">Type a URL and Saturn will fetch it through your server, then rewrite common page links, assets, and form actions.</p>
+    </div>
+    <span class="proxy-chip">Main focus of the app</span>
+  </section>
+
+  <section class="proxy-layout">
+    <article class="glass-card proxy-panel">
+      <div class="proxy-headline">
+        <div>
+          <h2>Open a proxied site</h2>
+          <p class="muted">Use full URLs or even just domains like example.com.</p>
+        </div>
+        <div class="proxy-status">Proxy ready</div>
+      </div>
+
+      <form class="proxy-start" method="GET" action="/saturn/browse">
+        <input type="text" name="url" value="<%= startUrl %>" placeholder="https://example.com" />
+        <button class="solid-btn" type="submit">Launch Saturn</button>
+      </form>
+
+      <% if (error) { %>
+        <div class="alert"><%= error %></div>
+      <% } %>
+
+      <div class="proxy-browser">
+        <div class="browser-bar">
+          <div class="browser-dots"><span></span><span></span><span></span></div>
+          <div class="browser-url">
+            <span><%= startUrl || 'https://example.com' %></span>
+            <span class="url-lock"></span>
+          </div>
+        </div>
+
+        <div class="browser-panels">
+          <div class="browser-panel">
+            <h3>Saturn shell</h3>
+            <div class="proxy-list">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="browser-panel">
+            <h3>What gets rewritten</h3>
+            <div class="quick-pills">
+              <span>Links</span>
+              <span>Forms</span>
+              <span>CSS URLs</span>
+              <span>Basic cookies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tips-grid">
+        <% tips.forEach((tip) => { %>
+          <article class="tip-card"><%= tip %></article>
+        <% }) %>
+      </div>
+    </article>
+
+    <aside class="proxy-cards">
+      <article class="panel-card compact">
+        <h3>Best on simpler sites</h3>
+        <p class="muted">Static pages and lighter websites usually behave better through a lightweight Express proxy.</p>
+      </article>
+
+      <article class="panel-card compact">
+        <h3>Common blockers</h3>
+        <ul>
+          <li>Strict CSP or frame protections</li>
+          <li>Heavy JavaScript apps and service workers</li>
+          <li>Anti-bot systems and advanced session flows</li>
+        </ul>
+      </article>
+
+      <article class="panel-card compact">
+        <h3>Why Saturn stands out</h3>
+        <p class="muted">This page is designed to feel like the flagship tool, with a mock browser shell, status badges, and larger proxy-focused hierarchy.</p>
+      </article>
+    </aside>
+  </section>
+</main>
+<%- include('partials/footer') %>

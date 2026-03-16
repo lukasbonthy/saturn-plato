@@ -1,0 +1,52 @@
+<%- include('partials/header', { title: 'Plato' }) %>
+<main class="page-content">
+  <section class="section-head">
+    <div>
+      <span class="eyebrow">Movies</span>
+      <h1>Plato</h1>
+      <p class="muted">A cleaner movie section so the logged-in experience still feels branded instead of plain.</p>
+    </div>
+
+    <div class="plato-toolbar">
+      <span class="movie-chip">Curated picks</span>
+      <form class="search-row" method="GET" action="/plato">
+        <input type="text" name="q" value="<%= q %>" placeholder="Search movies" />
+        <button class="solid-btn" type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="movie-grid">
+    <% if (!movies.length) { %>
+      <article class="glass-card movie-card">
+        <div class="movie-poster">
+          <div class="movie-rating">No result</div>
+          <div class="movie-year-big">--</div>
+        </div>
+        <div class="movie-meta">
+          <div class="movie-pill">Search</div>
+        </div>
+        <h2 class="movie-title">No matches</h2>
+        <p class="muted">Try a different search.</p>
+      </article>
+    <% } %>
+
+    <% movies.forEach((movie, index) => { %>
+      <article class="glass-card movie-card">
+        <div class="movie-poster">
+          <div class="movie-rating">Top pick</div>
+          <div class="movie-year-big"><%= movie.year %></div>
+        </div>
+
+        <div class="movie-meta">
+          <div class="movie-pill"><%= movie.genre %></div>
+          <div class="movie-chip">#<%= index + 1 %></div>
+        </div>
+
+        <h2 class="movie-title"><%= movie.title %></h2>
+        <p class="muted"><%= movie.blurb %></p>
+      </article>
+    <% }) %>
+  </section>
+</main>
+<%- include('partials/footer') %>

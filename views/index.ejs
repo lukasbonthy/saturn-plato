@@ -1,0 +1,82 @@
+<%- include('partials/header', { title: 'Saturn / Plato' }) %>
+<main class="hero">
+  <section class="hero-grid">
+    <article class="hero-card">
+      <span class="eyebrow">Node.js auth + proxy app</span>
+      <h1>Design-forward auth with a proxy-first dashboard.</h1>
+      <p class="hero-copy">
+        Sign up, log in, and drop into a polished dashboard with only the two tools you asked for:
+        <strong>Plato</strong> for movies and <strong>Saturn</strong> as the main event — a lightweight web proxy that rewrites common links, assets, and form actions.
+      </p>
+
+      <div class="cta-row">
+        <a href="/signup" class="solid-btn big">Create account</a>
+        <a href="/login" class="ghost-btn big">Log in</a>
+      </div>
+
+      <div class="hero-metrics">
+        <div class="stat-card">
+          <strong>2</strong>
+          <span>logged-in tools</span>
+        </div>
+        <div class="stat-card">
+          <strong>Proxy</strong>
+          <span>main featured experience</span>
+        </div>
+        <div class="stat-card">
+          <strong>Glass</strong>
+          <span>premium UI direction</span>
+        </div>
+      </div>
+    </article>
+
+    <aside class="preview-stack">
+      <article class="preview-card saturn-card">
+        <div class="preview-top">
+          <span class="preview-tag">Saturn</span>
+          <span class="preview-badge">Main focus</span>
+        </div>
+        <div class="browser-card">
+          <div class="browser-bar">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <div class="browser-url">https://example.com</div>
+          </div>
+          <div class="browser-content">
+            <div class="browser-line long"></div>
+            <div class="browser-line mid"></div>
+            <div class="browser-line long"></div>
+            <div class="browser-line short"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="preview-card plato-card">
+        <div class="preview-top">
+          <span class="preview-tag">Plato</span>
+          <span class="preview-badge">Movies</span>
+        </div>
+        <div class="poster-row">
+          <div class="poster"></div>
+          <div class="poster"></div>
+          <div class="poster"></div>
+        </div>
+      </article>
+    </aside>
+  </section>
+
+  <section class="feature-strip">
+    <article class="feature-mini">
+      <strong>Protected routes</strong>
+      <span class="muted">Signup, login, and a simple session-backed dashboard flow.</span>
+    </article>
+    <article class="feature-mini">
+      <strong>Proxy rewriting</strong>
+      <span class="muted">Common links, CSS URLs, forms, and basic cookies get routed through Saturn.</span>
+    </article>
+    <article class="feature-mini">
+      <strong>Sharper visual style</strong>
+      <span class="muted">Animated-feeling gradients, layered glass cards, and cleaner page hierarchy.</span>
+    </article>
+  </section>
+</main>
+<%- include('partials/footer') %>

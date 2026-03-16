@@ -1,0 +1,39 @@
+<%- include('partials/header', { title: 'Login' }) %>
+<main class="centered">
+  <section class="auth-shell">
+    <article class="glass-card auth-side">
+      <span class="eyebrow">Welcome back</span>
+      <h2>Log in and head straight to Saturn.</h2>
+      <p class="muted">
+        The dashboard stays focused: one polished movies page and one stronger proxy page designed to feel like the real product centerpiece.
+      </p>
+
+      <div class="auth-bullets">
+        <div><span>🪐</span><strong>Saturn puts the proxy front and center.</strong></div>
+        <div><span>🎬</span><strong>Plato adds a clean secondary movies experience.</strong></div>
+        <div><span>🔒</span><strong>Session auth keeps the dashboard protected.</strong></div>
+      </div>
+    </article>
+
+    <section class="auth-card">
+      <h1>Log in</h1>
+      <p class="muted">Jump back into Saturn and Plato.</p>
+      <% if (error) { %>
+        <div class="alert"><%= error %></div>
+      <% } %>
+      <form method="POST" action="/login" class="stack-form">
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" value="<%= values.email || '' %>" placeholder="you@example.com" required />
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" placeholder="••••••••" required />
+        </label>
+        <button class="solid-btn wide" type="submit">Log in</button>
+      </form>
+      <p class="muted small">No account yet? <a href="/signup">Create one</a>.</p>
+    </section>
+  </section>
+</main>
+<%- include('partials/footer') %>
