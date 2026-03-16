@@ -1,0 +1,27 @@
+<%- include('partials/header', { title: 'Saturn / Plato' }) %>
+<main class="hero">
+  <section class="hero-card">
+    <span class="eyebrow">Node.js auth + proxy app</span>
+    <h1>Saturn handles the proxy.<br>Plato handles the movies.</h1>
+    <p>
+      Sign up, log in, and land on a dashboard with two tools: <strong>Plato</strong> for movies and
+      <strong>Saturn</strong> for a lightweight in-app web proxy where users can type a URL and browse through your server.
+    </p>
+    <div class="cta-row">
+      <a href="/signup" class="solid-btn big">Create account</a>
+      <a href="/login" class="ghost-btn big">Log in</a>
+    </div>
+  </section>
+
+  <section class="grid two">
+    <article class="glass-card">
+      <h2>Saturn</h2>
+      <p>The main feature. It proxies pages, rewrites links, rewrites forms, rewrites CSS URLs, and stores simple cookies per session.</p>
+    </article>
+    <article class="glass-card">
+      <h2>Plato</h2>
+      <p>A clean little movie page so your dashboard shows the two tools you asked for.</p>
+    </article>
+  </section>
+</main>
+<%- include('partials/footer') %>
