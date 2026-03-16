@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a1022" />
+  <title><%= title %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/styles.css" />
+</head>
+<body>
+  <div class="site-grid"></div>
+  <div class="site-noise"></div>
+  <div class="site-glow"></div>
+
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-wrap">
+        <a class="logo" href="/">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span class="logo-text">
+            <strong>Saturn / Plato</strong>
+            <span>Proxy-first Node experience</span>
+          </span>
+        </a>
+      </div>
+
+      <nav class="nav">
+        <% if (user) { %>
+          <div class="nav-user">
+            <span>Signed in as</span>
+            <strong><%= user.username %></strong>
+          </div>
+          <div class="nav-pod">
+            <a href="/dashboard" class="nav-link <%= currentPath === '/dashboard' ? 'active' : '' %>">Dashboard</a>
+            <a href="/plato" class="nav-link <%= currentPath === '/plato' ? 'active' : '' %>">Plato</a>
+            <a href="/saturn" class="nav-link <%= currentPath === '/saturn' ? 'active' : '' %>">Saturn</a>
+            <form class="inline-form" action="/logout" method="POST">
+              <button class="ghost-btn" type="submit">Logout</button>
+            </form>
+          </div>
+        <% } else { %>
+          <div class="nav-pod">
+            <a href="/login" class="nav-link <%= currentPath === '/login' ? 'active' : '' %>">Login</a>
+            <a href="/signup" class="solid-btn">Sign up</a>
+          </div>
+        <% } %>
+      </nav>
+    </header>
