@@ -1,0 +1,17 @@
+{
+  "name": "saturn-plato",
+  "version": "1.0.0",
+  "description": "Node.js auth app with a movie hub and a simple in-app web proxy.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cheerio": "^1.0.0",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1"
+  }
+}
